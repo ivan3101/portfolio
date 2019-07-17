@@ -17,7 +17,7 @@ module.exports = {
     node: true,
     es6: true
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -26,6 +26,8 @@ module.exports = {
     sourceType: 'module' // Allows for the use of imports
   },
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
     '@typescript-eslint/explicit-function-return-type': 'off'
   },
