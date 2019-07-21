@@ -18,6 +18,7 @@
   "dependencies": {
     "autoprefixer": "^9.6.1",
     "gatsby": "^2.13.25",
+    "gatsby-plugin-brotli": "^1.2.3",
     "gatsby-plugin-postcss": "^2.1.2",
     "gatsby-plugin-purgecss": "^4.0.0",
     "gatsby-plugin-typescript": "^2.1.2",

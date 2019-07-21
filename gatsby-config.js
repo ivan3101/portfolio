@@ -8,6 +8,7 @@ module.exports = {
         printRejected: true,
         tailwind: true
       }
-    }
+    },
+    `gatsby-plugin-brotli`,
   ]
 }
