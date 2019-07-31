@@ -1,11 +1,12 @@
 import React from "react"
 import Container from "./container"
-import profileImage from "../../images/profileImage.jpg"
+import profileImage from "../../assets/images/profileImage.jpg"
+import SectionHeader from "./sectionHeader"
 
 const AboutMe = () => (
   <section className="pt-12 pb-12 bg-white">
     <Container>
-      <h2 className="font-semibold text-2xl text-center">ABOUT</h2>
+      <SectionHeader>ABOUT</SectionHeader>
       <article className="flex mt-12 items-center">
         <p className="w-1/2 px-16 leading-loose">
           I&apos;m an European Web Developer based in Venezuela. I have a degree
