@@ -5,7 +5,8 @@ module.exports = {
       yellow: "#FFA007",
       gray: {
         light: "#FAFAFA",
-        dark: "#424242"
+        dark: "#424242",
+        default: "#E0E0E0"
       },
       white: "#FFFFFF"
     },
