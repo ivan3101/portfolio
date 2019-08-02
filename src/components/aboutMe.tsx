@@ -4,10 +4,10 @@ import profileImage from "../../assets/images/profileImage.jpg"
 import SectionHeader from "./sectionHeader"
 
 const AboutMe = () => (
-  <section className="pt-12 pb-12 bg-white">
+  <section className="py-12 bg-white">
     <Container>
       <SectionHeader>ABOUT</SectionHeader>
-      <article className="flex mt-12 items-center">
+      <article className="flex mt-6 items-center">
         <p className="w-1/2 px-16 leading-loose">
           I&apos;m an European Web Developer based in Venezuela. I have a degree
           in Computer Engineering from the Jose Antonio Paez University. I love
