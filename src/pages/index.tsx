@@ -5,6 +5,7 @@ import AboutMe from "../components/aboutMe"
 import Skills from "../components/skills"
 import Projects from "../components/projects"
 import Contact from "../components/contact"
+import Footer from "../components/footer"
 
 const Index = () => (
   <React.Fragment>
@@ -16,6 +17,7 @@ const Index = () => (
       <Projects />
       <Contact />
     </main>
+    <Footer />
   </React.Fragment>
 )
 

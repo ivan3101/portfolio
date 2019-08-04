@@ -3,7 +3,7 @@ import Container from "./container"
 import NavbarLink from "./navbarLink"
 
 const Navbar = () => (
-  <nav className="h-12 bg-white sticky shadow">
+  <nav className="h-50px top-0 bg-white sticky shadow">
     <Container>
       <ul className="flex flex-row items-center h-full">
         <li>
