@@ -27,14 +27,14 @@ const Projects = () => (
       </Project>
     </Container>
 
-    <div className="h-px bg-gray-dark"></div>
+    <div className="h-px bg-blue"></div>
 
     <Container>
       <Project
         mockImage={UjapOnlineMockImage}
         description={"Ujap Online Screenshot"}
       >
-        <ProjectTitle>Ujap Online</ProjectTitle>
+        <ProjectTitle>UJAP Online</ProjectTitle>
         <p>
           For Jose Antonio Paez University, I created a redisigned interface for
           their online platform using new technologies and design tendencies. I
