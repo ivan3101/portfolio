@@ -4,6 +4,7 @@ import Navbar from "../components/navbar"
 import AboutMe from "../components/aboutMe"
 import Skills from "../components/skills"
 import Projects from "../components/projects"
+import Contact from "../components/contact"
 
 const Index = () => (
   <React.Fragment>
@@ -13,6 +14,7 @@ const Index = () => (
       <AboutMe />
       <Skills />
       <Projects />
+      <Contact />
     </main>
   </React.Fragment>
 )
