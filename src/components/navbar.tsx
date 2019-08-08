@@ -1,26 +1,28 @@
-import React from "react"
+import React, { useContext } from "react"
 import Container from "./container"
 import NavbarLink from "./navbarLink"
+import NavbarContext from "../context/navbarContext"
 
-const Navbar = () => (
-  <nav className="h-50px top-0 bg-white sticky shadow">
-    <Container>
-      <ul className="flex flex-row items-center h-full">
-        <li>
-          <NavbarLink href="#about">ABOUT</NavbarLink>
-        </li>
-        <li>
-          <NavbarLink href="#skills">SKILLS</NavbarLink>
-        </li>
-        <li>
-          <NavbarLink href="#projects">PROJECTS</NavbarLink>
-        </li>
-        <li>
-          <NavbarLink href="#contact">CONTACT</NavbarLink>
-        </li>
-      </ul>
-    </Container>
-  </nav>
-)
+const navbarItems = ["about", "skills", "projects", "contact"]
+
+const Navbar = () => {
+  const activeItem = useContext(NavbarContext)
+
+  return (
+    <nav className="h-50px top-0 bg-white sticky shadow">
+      <Container>
+        <ul className="flex flex-row items-center h-full">
+          {navbarItems.map((item: string, index: number) => (
+            <li key={item}>
+              <NavbarLink href={`#${item}`} active={activeItem === index}>
+                {item}
+              </NavbarLink>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </nav>
+  )
+}
 
 export default Navbar

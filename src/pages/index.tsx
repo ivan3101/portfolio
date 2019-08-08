@@ -6,16 +6,19 @@ import Skills from "../components/skills"
 import Projects from "../components/projects"
 import Contact from "../components/contact"
 import Footer from "../components/footer"
+import NavbarActive from "../components/navbarActive"
 
 const Index = () => (
   <React.Fragment>
     <main>
-      <Hero />
-      <Navbar />
-      <AboutMe />
-      <Skills />
-      <Projects />
-      <Contact />
+      <NavbarActive>
+        <Hero />
+        <Navbar />
+        <AboutMe />
+        <Skills />
+        <Projects />
+        <Contact />
+      </NavbarActive>
     </main>
     <Footer />
   </React.Fragment>
