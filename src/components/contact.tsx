@@ -4,7 +4,7 @@ import SectionHeader from "./sectionHeader"
 import { useInView } from "react-intersection-observer"
 import { navbarPayload, NavbarTypes } from "../reducer/navbarReducer"
 import NavbarDispatchContext from "../context/navbarDispatchContext"
-import ContactForm from "./contactForm"
+import ContactFormContainer from "./contactFormContainer"
 
 const Contact = () => {
   const dispatch = useContext(NavbarDispatchContext)
@@ -26,7 +26,7 @@ const Contact = () => {
           me a message using the contact form below or contact me through my
           social networks.
         </p>
-        <ContactForm />
+        <ContactFormContainer />
       </Container>
     </section>
   )
