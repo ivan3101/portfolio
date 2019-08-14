@@ -62,7 +62,7 @@ const ContactFormContainer = () => {
 
     fetch("/", {
       method: "POST",
-      headers: { "Contect-Type": "application/x-www-form-urlencoded" },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encodedRequestBody,
     })
       .then(() => navigate(form.getAttribute("action")!))
