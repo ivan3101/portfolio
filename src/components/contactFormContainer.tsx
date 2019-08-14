@@ -55,13 +55,14 @@ const ContactFormContainer = () => {
       ...contactData,
     }
 
-    alert(requestBody)
-
+    console.log(requestBody) // eslint-disable-line no-console
     const encodedRequestBody = encode(requestBody)
+
+    console.log(encodedRequestBody) // eslint-disable-line no-console
 
     fetch("/", {
       method: "POST",
-      headers: { "Contect-Type": "application/x-www-form-urlencoded " },
+      headers: { "Contect-Type": "application/x-www-form-urlencoded" },
       body: encodedRequestBody,
     })
       .then(() => navigate(form.getAttribute("action")!))
