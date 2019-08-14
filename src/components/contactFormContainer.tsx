@@ -55,6 +55,8 @@ const ContactFormContainer = () => {
       ...contactData,
     }
 
+    alert(requestBody)
+
     const encodedRequestBody = encode(requestBody)
 
     fetch("/", {
