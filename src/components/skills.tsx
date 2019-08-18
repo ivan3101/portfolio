@@ -19,7 +19,7 @@ const Skills = () => {
   }
 
   return (
-    <section className="py-12 bg-gray" ref={ref} id="skills">
+    <section className="py-12 bg-grey" ref={ref} id="skills">
       <Container>
         <SectionHeader>SKILLS</SectionHeader>
         <p className="mx-auto text-center px-48 mt-6 mb-5">

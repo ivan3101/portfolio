@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <header className={heroStyles.hero} ref={ref}>
-      <div className="text-gray-light">
+      <div className="text-grey-light">
         <h1 className="font-bold text-5xl">Hi, I&apos;m Ivan De Menezes</h1>
         <p className="text-2xl">
           A<HighlightedText> Fullstack Web Developer </HighlightedText>
