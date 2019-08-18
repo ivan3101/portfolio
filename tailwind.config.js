@@ -4,6 +4,10 @@ module.exports = {
       blue: "#007DB3",
       yellow: "#FFA007",
       red: "#D72828",
+      green: {
+        default: "#DFF2BF",
+        dark: "#32532D"
+      },
       grey: {
         light: "#FAFAFA",
         dark: "#424242",

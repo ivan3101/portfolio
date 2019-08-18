@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import ContactForm from "./contactForm"
 import useForm, { ValidationSchema } from "../hooks/useForm"
 import useFocus from "../hooks/useFocus"
@@ -29,6 +29,8 @@ const encode = (data: EncodeData) => {
 }
 
 const ContactFormContainer = () => {
+  const [success, setSuccess] = useState(false)
+
   const sendMessage = (
     contactData: ContactData,
     event: React.FormEvent<HTMLFormElement>,
@@ -50,7 +52,7 @@ const ContactFormContainer = () => {
     })
       .then(() => {
         resetForm()
-        alert("success")
+        setSuccess(true)
       })
       .catch(error => alert(error))
   }
@@ -108,6 +110,7 @@ const ContactFormContainer = () => {
       onFocus={onFocus}
       handleOnFocus={eventHandlers.onHandleFocus}
       handleOnBlur={eventHandlers.onHandleBlur}
+      success={success}
     />
   )
 }

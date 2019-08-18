@@ -6,6 +6,7 @@ import SubmitButton from "./submitButton"
 import TextArea from "./textArea"
 import FormGroup from "./formGroup"
 import Tooltip, { TooltipBackground } from "./tooltip"
+import SuccessMessage from "./successMessage"
 
 interface ContactFormProps {
   handleSubmit: React.ChangeEventHandler<HTMLFormElement>
@@ -16,6 +17,7 @@ interface ContactFormProps {
   handleOnFocus: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
   handleOnBlur: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
   onFocus: string
+  success: boolean
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({
@@ -27,6 +29,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   handleOnFocus,
   handleOnBlur,
   onFocus,
+  success,
 }) => {
   return (
     <form
@@ -38,6 +41,17 @@ const ContactForm: React.FC<ContactFormProps> = ({
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
+      <SuccessMessage show={success}>
+        <p className="font-semibold mb-2">
+          Thank you! Your message was sent successfully
+        </p>
+
+        <p>
+          I appreciate you liked my jobs and want to contact with me. I&apos;ll
+          contact you as soon as I read this message.
+        </p>
+      </SuccessMessage>
+
       <input type="hidden" name="form-name" value="contact" />
       <p hidden>
         <label>
