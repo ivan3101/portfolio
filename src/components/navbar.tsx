@@ -9,7 +9,7 @@ const Navbar = () => {
   const activeItem = useContext(NavbarContext)
 
   return (
-    <nav className="h-50px top-0 bg-white sticky shadow">
+    <nav className="h-50px top-0 bg-white sticky shadow z-50">
       <Container>
         <ul className="flex flex-row items-center h-full">
           {navbarItems.map((item: string, index: number) => (
