@@ -31,7 +31,8 @@ const encode = (data: EncodeData) => {
 const ContactFormContainer = () => {
   const sendMessage = (
     contactData: ContactData,
-    event: React.FormEvent<HTMLFormElement>
+    event: React.FormEvent<HTMLFormElement>,
+    resetForm: () => void
   ) => {
     const form = event.target as HTMLFormElement
 
@@ -47,7 +48,10 @@ const ContactFormContainer = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encodedRequestBody,
     })
-      .then(() => alert("success"))
+      .then(() => {
+        resetForm()
+        alert("success")
+      })
       .catch(error => alert(error))
   }
 
