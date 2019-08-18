@@ -1,0 +1,34 @@
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltipText {
+  min-width: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 120%;
+}
+
+.tooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.red::after {
+  border-color: #d72828 transparent transparent transparent;
+}
+
+.greyDark::after {
+  border-color: #424242 transparent transparent transparent;
+}
