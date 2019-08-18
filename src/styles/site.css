@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+:required {
+  box-shadow: none;
+}
+
 .max-w-1200 {
   max-width: 1200px;
 }

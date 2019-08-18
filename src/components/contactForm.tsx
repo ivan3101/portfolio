@@ -1,15 +1,32 @@
 import React from "react"
 import FormLabel from "./formLabel"
 import FormInput from "./formInput"
+import { ContactData } from "./contactFormContainer"
+import SubmitButton from "./submitButton"
+import TextArea from "./textArea"
+import FormGroup from "./formGroup"
+import Tooltip, { TooltipBackground } from "./tooltip"
 
 interface ContactFormProps {
   handleSubmit: React.ChangeEventHandler<HTMLFormElement>
   handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
+  values: ContactData
+  disable: boolean
+  errors: ContactData
+  handleOnFocus: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
+  handleOnBlur: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
+  onFocus: string
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({
   handleSubmit,
   handleChange,
+  values,
+  disable,
+  errors,
+  handleOnFocus,
+  handleOnBlur,
+  onFocus,
 }) => {
   return (
     <form
@@ -28,32 +45,73 @@ const ContactForm: React.FC<ContactFormProps> = ({
           <input name="bot-field" onChange={handleChange} />
         </label>
       </p>
-      <FormLabel htmlFor="name">Your Name</FormLabel>
-      <FormInput name="name" placeholder="John Smith" onChange={handleChange} />
+      <FormGroup>
+        <FormLabel htmlFor="name">Your Name</FormLabel>
 
-      <FormLabel htmlFor="email">Your Email</FormLabel>
-      <FormInput
-        name="email"
-        type="email"
-        placeholder="john@example.com"
-        onChange={handleChange}
-      />
+        <Tooltip
+          show={onFocus === "name" && !!errors.name}
+          block={true}
+          message={errors.name}
+          background={TooltipBackground.Red}
+        >
+          <FormInput
+            name="name"
+            required
+            placeholder="John Smith"
+            onChange={handleChange}
+            value={values.name}
+            error={!!errors.name}
+            onFocus={handleOnFocus}
+            onBlur={handleOnBlur}
+          />
+        </Tooltip>
+      </FormGroup>
 
-      <FormLabel htmlFor="message">Your Message</FormLabel>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Hello, how are you?"
-        className="text-gray-dark block w-full px-2 py-1 mb-4 rounded bg-white border-solid border-2 border-white focus:border-yellow focus:bg-white h-40"
-        onChange={handleChange}
-      ></textarea>
+      <FormGroup>
+        <FormLabel htmlFor="email">Your Email</FormLabel>
+        <Tooltip
+          show={onFocus === "email" && !!errors.email}
+          block={true}
+          message={errors.email}
+          background={TooltipBackground.Red}
+        >
+          <FormInput
+            name="email"
+            type="email"
+            placeholder="john@example.com"
+            onChange={handleChange}
+            onFocus={handleOnFocus}
+            onBlur={handleOnBlur}
+            value={values.email || ""}
+            error={!!errors.email}
+            required
+          />
+        </Tooltip>
+      </FormGroup>
 
-      <button
-        type="submit"
-        className="bg-yellow rounded px-6 py-3 font-semibold mt-3"
-      >
-        Send Message
-      </button>
+      <FormGroup>
+        <FormLabel htmlFor="message">Your Message</FormLabel>
+        <Tooltip
+          show={onFocus === "message" && !!errors.message}
+          block={true}
+          message={errors.message}
+          background={TooltipBackground.Red}
+        >
+          <TextArea
+            id="message"
+            name="message"
+            placeholder="Hello, how are you?"
+            onChange={handleChange}
+            value={values.message}
+            error={!!errors.message}
+            onFocus={handleOnFocus}
+            onBlur={handleOnBlur}
+            required
+          ></TextArea>
+        </Tooltip>
+      </FormGroup>
+
+      <SubmitButton disabled={disable}>Send Message</SubmitButton>
     </form>
   )
 }

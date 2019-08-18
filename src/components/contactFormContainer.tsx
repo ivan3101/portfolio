@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import ContactForm from "./contactForm"
-import { navigate } from "gatsby-link"
+import useForm, { ValidationSchema } from "../hooks/useForm"
+import useFocus from "../hooks/useFocus"
 
-interface ContactData {
+export interface ContactData {
   [index: string]: string
   name: string
   email: string
@@ -28,27 +29,11 @@ const encode = (data: EncodeData) => {
 }
 
 const ContactFormContainer = () => {
-  const [contactData, setContactData] = useState<ContactData>({
-    name: "",
-    email: "",
-    message: "",
-  })
-
-  const handleChange: React.ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = e => {
-    const input = e.target
-
-    setContactData({
-      ...contactData,
-      [input.name]: input.value,
-    })
-  }
-
-  const handleSubmit: React.ChangeEventHandler<HTMLFormElement> = e => {
-    e.preventDefault()
-
-    const form = e.target
+  const sendMessage = (
+    contactData: ContactData,
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    const form = event.target as HTMLFormElement
 
     const requestBody = {
       "form-name": form.getAttribute("name") || "",
@@ -66,7 +51,61 @@ const ContactFormContainer = () => {
       .catch(error => alert(error))
   }
 
-  return <ContactForm handleSubmit={handleSubmit} handleChange={handleChange} />
+  const contactDataSchema: ContactData = {
+    name: "",
+    email: "",
+    message: "",
+  }
+
+  const validationSchema: ValidationSchema = {
+    name: {
+      required: true,
+      requiredMessage: "You must enter your Name",
+      validator: {
+        regEx: /^[a-zA-Z\s]+$/,
+        error: "The Name field only can contain letters and spaces",
+      },
+    },
+    email: {
+      required: true,
+      requiredMessage: "You must enter your email",
+      validator: {
+        regEx: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        error: "The Email entered is invalid",
+      },
+    },
+    message: {
+      required: true,
+      requiredMessage: "You must enter your message",
+      validator: {
+        regEx: /^[a-zA-Z'",.@#!?\d\s]+$/,
+        error: "The message entered is invalid",
+      },
+    },
+  }
+
+  const {
+    state: contactData,
+    errors,
+    disable,
+    handleOnChange,
+    handleOnSubmit,
+  } = useForm(contactDataSchema, validationSchema, sendMessage)
+
+  const [onFocus, eventHandlers] = useFocus()
+
+  return (
+    <ContactForm
+      handleSubmit={handleOnSubmit}
+      handleChange={handleOnChange}
+      values={contactData}
+      errors={errors}
+      disable={disable}
+      onFocus={onFocus}
+      handleOnFocus={eventHandlers.onHandleFocus}
+      handleOnBlur={eventHandlers.onHandleBlur}
+    />
+  )
 }
 
 export default ContactFormContainer
