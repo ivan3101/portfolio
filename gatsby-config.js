@@ -9,6 +9,5 @@ module.exports = {
         tailwind: true
       }
     },
-    `gatsby-plugin-brotli`,
   ]
 }
