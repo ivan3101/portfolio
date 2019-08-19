@@ -47,8 +47,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </p>
 
         <p>
-          I appreciate you liked my jobs and want to contact with me. I&apos;ll
-          contact you as soon as I read this message.
+          I appreciate that you liked my work and want to contact me. I&apos;ll
+          get back to you as soon as I read this message.
         </p>
       </SuccessMessage>
 
