@@ -10,7 +10,7 @@ import NavbarActive from "../components/navbarActive"
 
 const Index = () => (
   <React.Fragment>
-    <main className="text-grey-dark">
+    <main className="text-grey-dark lg:text-lg leading-relaxed">
       <NavbarActive>
         <Hero />
         <Navbar />

@@ -18,11 +18,7 @@ const Contact = () => {
   }
 
   return (
-    <section
-      className="leading-loose py-12 bg-blue text-white"
-      ref={ref}
-      id="contact"
-    >
+    <section className="py-12 bg-blue text-white" ref={ref} id="contact">
       <Container>
         <SectionHeader>CONTACT</SectionHeader>
         <p className="px-3 mt-6 sm:text-center md:px-32 lg:px-56">

@@ -22,7 +22,7 @@ const AboutMe = () => {
       <Container>
         <SectionHeader>ABOUT</SectionHeader>
         <article className="flex mt-6 items-center flex-col-reverse lg:flex-row">
-          <p className="px-6 mt-6 leading-loose md:px-16 lg:w-1/2">
+          <p className="px-6 mt-6 md:px-16 lg:w-1/2">
             I&apos;m an European Web Developer based in Venezuela. I have a
             degree in Computer Engineering from the Jose Antonio Paez
             University. I love Linux and I&apos;ve been using it since I was 12

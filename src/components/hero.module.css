@@ -1,5 +1,6 @@
 .hero {
   height: 540px;
+  max-height: 100vh;
   width: 100%;
   background-image: linear-gradient(
       rgba(66, 66, 66, 0.3),

@@ -22,7 +22,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 }) => {
   const containerClasses = block ? "block" : "inline-block"
 
-  let classes = `w-auto text-sm text-white font-semibold text-center rounded-sm p-1 absolute z-10 ${TooltipStyles.tooltipText} `
+  let classes = `w-auto text-sm text-white font-semibold text-center rounded-sm p-1 absolute z-10 lg:text-base ${TooltipStyles.tooltipText} `
 
   if (background === TooltipBackground.Red) {
     classes += `bg-red ${TooltipStyles.red} `

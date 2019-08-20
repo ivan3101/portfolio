@@ -22,7 +22,7 @@ const Skills = () => {
     <section className="py-12 bg-grey" ref={ref} id="skills">
       <Container>
         <SectionHeader>SKILLS</SectionHeader>
-        <p className="mx-auto px-6 mt-6 mb-5 leading-loose md:text-center lg:px-48">
+        <p className="mx-auto px-6 mt-6 mb-5 md:text-center lg:px-48">
           In my time as a Web Developer, I learned a variety of Computational
           Languages, Libraries, Frameworks, Databases and Tools. I’m specialized
           in JavaScript and use it for both, Front-end and Back-end development.
