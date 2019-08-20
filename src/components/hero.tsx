@@ -19,8 +19,10 @@ const Hero = () => {
   return (
     <header className={heroStyles.hero} ref={ref}>
       <div className="text-grey-light">
-        <h1 className="font-bold text-5xl">Hi, I&apos;m Ivan De Menezes</h1>
-        <p className="text-2xl">
+        <h1 className="font-bold text-3xl sm:text-5xl">
+          Hi, I&apos;m Ivan De Menezes
+        </h1>
+        <p className="text-xl sm:text-2xl">
           A<HighlightedText> Fullstack Web Developer </HighlightedText>
           and
           <HighlightedText> Linux</HighlightedText> enthusiast.

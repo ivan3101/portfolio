@@ -3,7 +3,7 @@ import HighlightedText from "./highlightedText"
 import Container from "./container"
 
 const Footer = () => (
-  <footer className="bg-grey-dark text-white py-12 text-center">
+  <footer className="leading-loose bg-grey-dark text-white py-12 text-center">
     <Container>
       <p className="mb-4">
         This portfolio was built using{" "}

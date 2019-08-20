@@ -21,15 +21,15 @@ const AboutMe = () => {
     <section className="py-12 bg-white" ref={ref} id="about">
       <Container>
         <SectionHeader>ABOUT</SectionHeader>
-        <article className="flex mt-6 items-center">
-          <p className="w-1/2 px-16 leading-loose">
+        <article className="flex mt-6 items-center flex-col-reverse lg:flex-row">
+          <p className="px-6 mt-6 leading-loose md:px-16 lg:w-1/2">
             I&apos;m an European Web Developer based in Venezuela. I have a
             degree in Computer Engineering from the Jose Antonio Paez
             University. I love Linux and I&apos;ve been using it since I was 12
             years old. I&apos;ve been programming for almost 6 years now,
             specialized in JavaScript and NodeJS.
           </p>
-          <div className="w-1/2">
+          <div className="lg:w-1/2">
             <img
               src={profileImage}
               alt="Ivan's photo"

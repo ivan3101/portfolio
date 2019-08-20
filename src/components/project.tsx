@@ -10,9 +10,15 @@ const Project: React.FC<ProjectProps> = ({
   mockImage,
   description,
 }) => (
-  <article className="flex flex-row my-12">
-    <section className="w-1/2 pl-4 pr-16 text-left">{children}</section>
-    <img src={mockImage} alt={description} className="w-1/2" />
+  <article className="flex flex-col my-6 leading-loose lg:flex-row">
+    <section className="px-6 mb-6 lg:w-1/2 lg:pr-16 lg:pl-4">
+      {children}
+    </section>
+    <img
+      src={mockImage}
+      alt={description}
+      className="md:max-w-lg mx-auto lg:max-w-xl lg:w-3/5"
+    />
   </article>
 )
 
