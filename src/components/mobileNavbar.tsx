@@ -12,7 +12,7 @@ const MobileNavbar = () => {
   return (
     <React.Fragment>
       <MenuButton onClick={handleOnClick} showMenu={showMenu} />
-      <ResponsiveMenu show={showMenu} onClickLink={handleOnClick} />
+      <ResponsiveMenu show={showMenu} onClick={handleOnClick} />
     </React.Fragment>
   )
 }

@@ -9,10 +9,10 @@ import linkedinIcon from "../../assets/icons/linkedin.svg"
 
 interface MobileNavbarProps {
   show: boolean
-  onClickLink: React.MouseEventHandler
+  onClick: React.MouseEventHandler
 }
 
-const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClickLink }) => {
+const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
   const activeItem = useContext(NavbarContext)
 
   let navClasses =
@@ -27,7 +27,7 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClickLink }) => {
     : `invisible opacity-0 ${ResponsiveMenuStyles.hideOverlay}`
 
   return (
-    <div className={overlayClasses} onClick={onClickLink}>
+    <div className={overlayClasses} onClick={onClick}>
       <nav className={navClasses}>
         <ul>
           {navbarItems.map((item: string, index: number) => (
@@ -35,7 +35,6 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClickLink }) => {
               <ResponsiveNavbarLink
                 href={`#${item}`}
                 active={activeItem === index}
-                onClick={onClickLink}
               >
                 {item}
               </ResponsiveNavbarLink>
