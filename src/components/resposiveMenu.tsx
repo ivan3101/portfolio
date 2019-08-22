@@ -16,7 +16,7 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClickLink }) => {
   const activeItem = useContext(NavbarContext)
 
   let navClasses =
-    "fixed h-screen bg-white w-3/5 top-0 right-0 z-50 opacity-100 pt-12 "
+    "fixed h-full bg-white w-3/5 top-0 right-0 z-50 opacity-100 pt-12 "
   let overlayClasses = `sm:hidden fixed top-0 left-0 w-screen h-screen z-40 ${ResponsiveMenuStyles.NavbarOverlay} `
 
   navClasses += show
