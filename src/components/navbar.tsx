@@ -12,7 +12,7 @@ const Navbar = () => {
   const activeItem = useContext(NavbarContext)
 
   return (
-    <nav className="h-50px top-0 text-base bg-white sticky shadow z-50 hidden sm:block">
+    <nav className="h-50px top-0 sm:text-sm lg:text-base bg-white sticky shadow z-50 hidden sm:block">
       <Container>
         <ul className="flex flex-row h-full">
           {navbarItems.map((item: string, index: number) => (
