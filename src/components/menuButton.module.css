@@ -1,0 +1,11 @@
+.iconBar {
+  display: block;
+  width: 25px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #ffffff;
+}
+
+.iconBar:not(:first-child) {
+  margin-top: 4px;
+}
