@@ -13,7 +13,7 @@ const Projects = () => {
   const dispatch = useContext(NavbarDispatchContext)
 
   const [ref, inView] = useInView({
-    threshold: 0.4,
+    threshold: 0.3,
   })
 
   if (inView) {
