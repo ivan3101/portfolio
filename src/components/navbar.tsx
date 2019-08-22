@@ -6,7 +6,7 @@ import IconLink from "./iconLink"
 import githubIcon from "../../assets/icons/github.svg"
 import linkedinIcon from "../../assets/icons/linkedin.svg"
 
-const navbarItems = ["about", "skills", "projects", "contact"]
+export const navbarItems = ["about", "skills", "projects", "contact"]
 
 const Navbar = () => {
   const activeItem = useContext(NavbarContext)

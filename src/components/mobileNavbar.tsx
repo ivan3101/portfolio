@@ -11,7 +11,7 @@ const MobileNavbar = () => {
 
   return (
     <React.Fragment>
-      <MenuButton onClick={handleOnClick} />
+      <MenuButton onClick={handleOnClick} showMenu={showMenu} />
       <ResponsiveMenu show={showMenu} onClickLink={handleOnClick} />
     </React.Fragment>
   )

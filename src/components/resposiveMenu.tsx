@@ -1,4 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
+import ResponsiveMenuStyles from "./resposiveMenu.module.css"
+import ResponsiveNavbarLink from "./responsiveNavbarLink"
+import { navbarItems } from "./navbar"
+import NavbarContext from "../context/navbarContext"
+import IconLink from "./iconLink"
+import githubIcon from "../../assets/icons/github.svg"
+import linkedinIcon from "../../assets/icons/linkedin.svg"
 
 interface MobileNavbarProps {
   show: boolean
@@ -6,35 +13,48 @@ interface MobileNavbarProps {
 }
 
 const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClickLink }) => {
-  let classes = "fixed h-screen bg-white w-3/5 top-0 right-0 z-50 "
+  const activeItem = useContext(NavbarContext)
 
-  classes += show ? "block" : "hidden"
+  let navClasses =
+    "fixed h-screen bg-white w-3/5 top-0 right-0 z-50 opacity-100 pt-12 "
+  let overlayClasses = `sm:hidden fixed top-0 left-0 w-screen h-screen z-40 ${ResponsiveMenuStyles.NavbarOverlay} `
+
+  navClasses += show
+    ? `block ${ResponsiveMenuStyles.showMenu}`
+    : `hidden ${ResponsiveMenuStyles.hideMenu}`
+  overlayClasses += show
+    ? `visible opacity-100 ${ResponsiveMenuStyles.showOverlay}`
+    : `invisible opacity-0 ${ResponsiveMenuStyles.hideOverlay}`
 
   return (
-    <nav className={classes}>
-      <ul>
-        <li>
-          <a href="#about" onClick={onClickLink}>
-            about
-          </a>
-        </li>
-        <li>
-          <a href="#skills" onClick={onClickLink}>
-            skills
-          </a>
-        </li>
-        <li>
-          <a href="#projects" onClick={onClickLink}>
-            projects
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={onClickLink}>
-            contact
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <div className={overlayClasses} onClick={onClickLink}>
+      <nav className={navClasses}>
+        <ul>
+          {navbarItems.map((item: string, index: number) => (
+            <li key={item}>
+              <ResponsiveNavbarLink
+                href={`#${item}`}
+                active={activeItem === index}
+                onClick={onClickLink}
+              >
+                {item}
+              </ResponsiveNavbarLink>
+            </li>
+          ))}
+        </ul>
+        <ul className="flex flex-row absolute bottom-0 w-full justify-center">
+          <li>
+            <IconLink
+              link="https://www.linkedin.com/in/iv%C3%A1n-de-menezes-64ba17122/"
+              src={linkedinIcon}
+            />
+          </li>
+          <li>
+            <IconLink link="https://github.com/ivan3101/" src={githubIcon} />
+          </li>
+        </ul>
+      </nav>
+    </div>
   )
 }
 
