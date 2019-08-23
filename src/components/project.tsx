@@ -22,6 +22,7 @@ const Project: React.FC<ProjectProps> = ({
         objectFit: "",
         height: "auto",
       }}
+      loading="eager"
       className="md:max-w-lg lg:mx-auto lg:max-w-xl md:w-3/5 md:my-auto"
     />
   </article>
