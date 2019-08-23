@@ -98,7 +98,7 @@ function useForm<T extends Record<string, string>>(
         callback(state, event, resetForm)
       }
     },
-    [state, callback, validateState]
+    [state, callback, validateState, resetForm]
   )
 
   return { state, errors, disable, handleOnChange, handleOnSubmit }
