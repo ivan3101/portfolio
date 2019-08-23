@@ -1,7 +1,8 @@
 import React from "react"
+import Img, { FluidObject } from "gatsby-image"
 
 interface ProjectProps {
-  mockImage: string
+  mockImage: FluidObject | FluidObject[]
   description: string
 }
 
@@ -10,14 +11,18 @@ const Project: React.FC<ProjectProps> = ({
   mockImage,
   description,
 }) => (
-  <article className="flex flex-col my-6 lg:flex-row">
-    <section className="px-6 mb-6 lg:w-1/2 lg:pr-16 lg:pl-4">
+  <article className="flex flex-col my-6 md:flex-row">
+    <section className="px-6 mb-6 md:w-1/2 md:pr-16 md:pl-4">
       {children}
     </section>
-    <img
-      src={mockImage}
+    <Img
+      fluid={mockImage}
       alt={description}
-      className="md:max-w-lg mx-auto lg:max-w-xl lg:w-3/5"
+      imgStyle={{
+        objectFit: "",
+        height: "auto",
+      }}
+      className="md:max-w-lg lg:mx-auto lg:max-w-xl md:w-3/5 md:my-auto"
     />
   </article>
 )

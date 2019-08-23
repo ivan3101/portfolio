@@ -9,5 +9,20 @@ module.exports = {
         tailwind: true
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/assets/images/`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: true,
+        stripMetadata: true
+      }
+    },
+    `gatsby-transformer-sharp`,
   ]
 }

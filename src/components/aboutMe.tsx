@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import Container from "./container"
-import profileImage from "../../assets/images/profileImage.jpg"
+import ProfileImage from "./profileImage"
 import SectionHeader from "./sectionHeader"
 import { useInView } from "react-intersection-observer"
 import { navbarPayload, NavbarTypes } from "../reducer/navbarReducer"
@@ -30,11 +30,7 @@ const AboutMe = () => {
             specialized in JavaScript and NodeJS.
           </p>
           <div className="lg:w-1/2">
-            <img
-              src={profileImage}
-              alt="Ivan's photo"
-              className="h-64 w-64 rounded-full mx-auto"
-            />
+            <ProfileImage />
           </div>
         </article>
       </Container>
