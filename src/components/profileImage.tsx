@@ -7,7 +7,7 @@ const query = graphql`
     file(relativePath: { eq: "profileImage.jpg" }) {
       childImageSharp {
         fixed(width: 256, height: 256) {
-          ...GatsbyImageSharpFixed_withWebp
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
     }
@@ -26,7 +26,7 @@ const ProfileImage = () => {
       style={{
         display: "block",
       }}
-      loading="eager"
+      loading="lazy"
     />
   )
 }

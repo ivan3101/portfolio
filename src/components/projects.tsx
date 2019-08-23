@@ -19,7 +19,7 @@ const query = graphql`
               srcSetBreakpoints: [360, 640, 768, 1024, 1280]
               jpegProgressive: true
             ) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
