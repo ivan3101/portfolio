@@ -19,6 +19,7 @@
     "autoprefixer": "^9.6.1",
     "gatsby": "^2.13.80",
     "gatsby-image": "^2.2.13",
+    "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-postcss": "^2.1.5",
     "gatsby-plugin-purgecss": "^4.0.0",
     "gatsby-plugin-sharp": "^2.2.17",
