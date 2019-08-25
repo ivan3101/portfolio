@@ -41,17 +41,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
-      <SuccessMessage show={success}>
-        <p className="font-semibold mb-2">
-          Thank you! Your message was sent successfully
-        </p>
-
-        <p>
-          I appreciate that you liked my work and want to contact me. I&apos;ll
-          get back to you as soon as I read this message.
-        </p>
-      </SuccessMessage>
-
       <input type="hidden" name="form-name" value="contact" />
       <p hidden>
         <label>
@@ -70,6 +59,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         >
           <FormInput
             name="name"
+            id="name"
             required
             placeholder="John Smith"
             onChange={handleChange}
@@ -91,6 +81,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         >
           <FormInput
             name="email"
+            id="email"
             type="email"
             placeholder="john@example.com"
             onChange={handleChange}
@@ -124,6 +115,17 @@ const ContactForm: React.FC<ContactFormProps> = ({
           ></TextArea>
         </Tooltip>
       </FormGroup>
+
+      <SuccessMessage show={success}>
+        <p className="font-semibold mb-2">
+          Thank you! Your message was sent successfully
+        </p>
+
+        <p>
+          I appreciate that you liked my work and want to contact me. I&apos;ll
+          get back to you as soon as I read this message.
+        </p>
+      </SuccessMessage>
 
       <SubmitButton disabled={disable}>Send Message</SubmitButton>
     </form>

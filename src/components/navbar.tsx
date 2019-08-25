@@ -6,7 +6,12 @@ import IconLink from "./iconLink"
 import githubIcon from "../../assets/icons/github.svg"
 import linkedinIcon from "../../assets/icons/linkedin.svg"
 
-export const navbarItems = ["about", "skills", "projects", "contact"]
+export const navbarItems = [
+  "about me",
+  "my skills",
+  "my projects",
+  "contact me",
+]
 
 const Navbar = () => {
   const activeItem = useContext(NavbarContext)
@@ -17,7 +22,10 @@ const Navbar = () => {
         <ul className="flex flex-row h-full">
           {navbarItems.map((item: string, index: number) => (
             <li key={item}>
-              <NavbarLink href={`#${item}`} active={activeItem === index}>
+              <NavbarLink
+                href={"#" + item.replace(" ", "-")}
+                active={activeItem === index}
+              >
                 {item}
               </NavbarLink>
             </li>
@@ -25,13 +33,18 @@ const Navbar = () => {
           <li className="ml-auto">
             <IconLink
               src={linkedinIcon}
+              title="Ivan's Linkedin profile"
               link={
                 "https://www.linkedin.com/in/iv%C3%A1n-de-menezes-64ba17122/"
               }
             />
           </li>
           <li>
-            <IconLink src={githubIcon} link={"https://github.com/ivan3101/"} />
+            <IconLink
+              src={githubIcon}
+              title="Ivan's Github profile"
+              link={"https://github.com/ivan3101/"}
+            />
           </li>
         </ul>
       </Container>

@@ -42,18 +42,18 @@ const Projects = () => {
   const [ujapMockup, rnetMockup] = useStaticQuery(query).allFile.edges
 
   return (
-    <section className="pt-12 bg-white" ref={ref} id="projects">
+    <section className="pt-12 bg-white" ref={ref} id="my-projects">
       <Container>
-        <SectionHeader>PROJECTS</SectionHeader>
+        <SectionHeader>My Projects</SectionHeader>
         <Project
           mockImage={rnetMockup.node.childImageSharp.fluid}
-          description={"RNet Screenshot"}
+          description={"RNet"}
         >
           <ProjectTitle>RNet Blog</ProjectTitle>
           <p>
             RNet is a blog about technology. The idea was to made a web page
             while thinking about the problems that experiments people with
-            visual discapacities while navigating. I was responsible for the UI
+            visual disability while navigating. I was responsible for the UI
             design, UX and Front-end development and a API to use as Back-end.
           </p>
           <br />
@@ -70,7 +70,7 @@ const Projects = () => {
       <Container>
         <Project
           mockImage={ujapMockup.node.childImageSharp.fluid}
-          description={"Ujap Online Screenshot"}
+          description={"Ujap Online"}
         >
           <ProjectTitle>UJAP Online</ProjectTitle>
           <p>

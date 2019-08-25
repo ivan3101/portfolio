@@ -16,8 +16,8 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
   const activeItem = useContext(NavbarContext)
 
   let navClasses =
-    "fixed h-full bg-white w-3/5 top-0 right-0 z-50 opacity-100 pt-12 "
-  let overlayClasses = `sm:hidden fixed top-0 left-0 w-screen h-screen z-40 ${ResponsiveMenuStyles.NavbarOverlay} `
+    "fixed h-full bg-white w-3/5 top-0 right-0 z-40 opacity-100 pt-12 "
+  let overlayClasses = `sm:hidden fixed top-0 left-0 w-screen h-screen z-30 ${ResponsiveMenuStyles.NavbarOverlay} `
 
   navClasses += show
     ? `block ${ResponsiveMenuStyles.showMenu}`
@@ -27,7 +27,12 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
     : `invisible opacity-0 ${ResponsiveMenuStyles.hideOverlay}`
 
   return (
-    <div className={overlayClasses} onClick={onClick}>
+    <React.Fragment>
+      <div
+        className={overlayClasses}
+        onClick={onClick}
+        aria-hidden={true}
+      ></div>
       <nav className={navClasses}>
         <ul>
           {navbarItems.map((item: string, index: number) => (
@@ -46,14 +51,19 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
             <IconLink
               link="https://www.linkedin.com/in/iv%C3%A1n-de-menezes-64ba17122/"
               src={linkedinIcon}
+              title="Ivan's Linkedin Profile"
             />
           </li>
           <li>
-            <IconLink link="https://github.com/ivan3101/" src={githubIcon} />
+            <IconLink
+              link="https://github.com/ivan3101/"
+              src={githubIcon}
+              title="Ivan's Github profile"
+            />
           </li>
         </ul>
       </nav>
-    </div>
+    </React.Fragment>
   )
 }
 

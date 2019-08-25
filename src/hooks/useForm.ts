@@ -84,10 +84,6 @@ function useForm<T extends Record<string, string>>(
     [validationSchema]
   )
 
-  const resetForm = () => {
-    setState(stateSchema)
-  }
-
   const handleOnSubmit = useCallback(
     event => {
       event.preventDefault()
@@ -95,10 +91,13 @@ function useForm<T extends Record<string, string>>(
       // Make sure that validateState returns false
       // Before calling the submit callback function
       if (!validateState()) {
+        const resetForm = () => {
+          setState(stateSchema)
+        }
         callback(state, event, resetForm)
       }
     },
-    [state, callback, validateState, resetForm]
+    [validateState, callback, state, stateSchema]
   )
 
   return { state, errors, disable, handleOnChange, handleOnSubmit }

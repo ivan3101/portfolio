@@ -11,17 +11,17 @@ import MobileNavbar from "../components/mobileNavbar"
 
 const Index = () => (
   <React.Fragment>
-    <main className="text-grey-dark xl:text-lg leading-relaxed">
-      <NavbarActive>
-        <MobileNavbar />
-        <Hero />
+    <NavbarActive>
+      <MobileNavbar />
+      <Hero />
+      <main className="text-grey-dark xl:text-lg leading-relaxed">
         <Navbar />
         <AboutMe />
         <Skills />
         <Projects />
         <Contact />
-      </NavbarActive>
-    </main>
+      </main>
+    </NavbarActive>
     <Footer />
   </React.Fragment>
 )

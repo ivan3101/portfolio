@@ -6,7 +6,11 @@ interface SuccessMessageProps {
 
 const SuccessMessage: React.FC<SuccessMessageProps> = ({ show, children }) =>
   show ? (
-    <section className="mb-3 p-4 text-left rounded bg-green text-green-dark">
+    <section
+      role="status"
+      aria-live="assertive"
+      className="mb-3 p-4 text-left rounded bg-green text-green-dark"
+    >
       {children}
     </section>
   ) : null

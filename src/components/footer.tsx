@@ -8,13 +8,13 @@ const Footer = () => (
       <p className="mb-4">
         This portfolio was built using{" "}
         <HighlightedText>
-          <a href="https://www.gatsbyjs.org/" className="hover:underline">
+          <a href="https://www.gatsbyjs.org/" className="underline">
             GatsbyJS
           </a>
         </HighlightedText>{" "}
         and{" "}
         <HighlightedText>
-          <a href="https://tailwindcss.com/" className="hover:underline">
+          <a href="https://tailwindcss.com/" className="underline">
             TailwindCSS
           </a>
         </HighlightedText>

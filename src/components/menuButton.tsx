@@ -18,9 +18,23 @@ const MenuButton: React.FC<MenuButtonProps> = ({ onClick, showMenu }) => {
 
   return (
     <button className={classes} onClick={onClick}>
-      <span className={MenuButtonStyles.iconBar + bar1}></span>
-      <span className={MenuButtonStyles.iconBar + bar2}></span>
-      <span className={MenuButtonStyles.iconBar + bar3}></span>
+      <p className="sr-only">
+        {showMenu
+          ? "Close mobile navigation menu"
+          : "Open mobile navigation menu"}
+      </p>
+      <span
+        className={MenuButtonStyles.iconBar + bar1}
+        aria-hidden={true}
+      ></span>
+      <span
+        className={MenuButtonStyles.iconBar + bar2}
+        aria-hidden={true}
+      ></span>
+      <span
+        className={MenuButtonStyles.iconBar + bar3}
+        aria-hidden={true}
+      ></span>
     </button>
   )
 }

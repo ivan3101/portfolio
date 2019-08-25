@@ -19,8 +19,8 @@ const ProfileImage = () => {
 
   return (
     <Img
-      alt="Photo of Ivan"
-      title="Photo of Ivan"
+      alt="Ivan"
+      title="Ivan"
       fixed={data.file.childImageSharp.fixed}
       className="h-64 w-64 rounded-full mx-auto"
       style={{

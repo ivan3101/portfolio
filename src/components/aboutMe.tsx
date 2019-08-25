@@ -18,9 +18,9 @@ const AboutMe = () => {
   }
 
   return (
-    <section className="py-12 bg-white" ref={ref} id="about">
+    <section className="py-12 bg-white" ref={ref} id="about-me">
       <Container>
-        <SectionHeader>ABOUT</SectionHeader>
+        <SectionHeader>About Me</SectionHeader>
         <article className="flex mt-6 items-center flex-col-reverse lg:flex-row">
           <p className="px-6 mt-6 md:px-16 lg:w-1/2">
             I&apos;m an European Web Developer based in Venezuela. I have a

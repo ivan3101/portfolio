@@ -22,7 +22,11 @@ const icons: Icon[] = r.keys().map((item: string) => {
 const SkillIconContainer = () => (
   <React.Fragment>
     {icons.map((icon: Icon) => (
-      <SkillIcon src={icon.src} alt={icon.description} key={icon.description} />
+      <SkillIcon
+        src={icon.src}
+        description={icon.description}
+        key={icon.description}
+      />
     ))}
   </React.Fragment>
 )

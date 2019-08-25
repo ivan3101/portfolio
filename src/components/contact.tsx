@@ -18,10 +18,10 @@ const Contact = () => {
   }
 
   return (
-    <section className="py-12 bg-blue text-white" ref={ref} id="contact">
+    <section className="py-10 bg-blue text-white" ref={ref} id="contact-me">
       <Container>
-        <SectionHeader>CONTACT</SectionHeader>
-        <p className="px-3 mt-6 sm:text-center md:px-32 lg:px-56">
+        <SectionHeader>Contact Me</SectionHeader>
+        <p className="px-3 mt-2 sm:text-center md:px-32 lg:px-56">
           If you like my work and want to talk with me, then feel free to send
           me a message using the contact form below or contact me through my
           social networks.
