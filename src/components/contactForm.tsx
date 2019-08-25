@@ -56,6 +56,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           block={true}
           message={errors.name}
           background={TooltipBackground.Red}
+          id="nameTooltip"
         >
           <FormInput
             name="name"
@@ -67,6 +68,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             error={!!errors.name}
             onFocus={handleOnFocus}
             onBlur={handleOnBlur}
+            aria-describedby="nameTooltip"
           />
         </Tooltip>
       </FormGroup>
@@ -78,6 +80,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           block={true}
           message={errors.email}
           background={TooltipBackground.Red}
+          id="emailTooltip"
         >
           <FormInput
             name="email"
@@ -89,6 +92,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             onBlur={handleOnBlur}
             value={values.email || ""}
             error={!!errors.email}
+            aria-describedby="emailTooltip"
             required
           />
         </Tooltip>
@@ -101,8 +105,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
           block={true}
           message={errors.message}
           background={TooltipBackground.Red}
+          id="messageTooltip"
         >
           <TextArea
+            aria-describedby="messageTooltip"
             id="message"
             name="message"
             placeholder="Hello, how are you?"

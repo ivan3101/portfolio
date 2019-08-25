@@ -11,6 +11,7 @@ interface TooltipProps {
   show: boolean
   message: string
   block: boolean
+  id: string
 }
 
 const Tooltip: React.FC<TooltipProps> = ({
@@ -19,6 +20,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   show = false,
   message = "Hello World",
   block = false,
+  id,
 }) => {
   const containerClasses = block ? "block" : "inline-block"
 
@@ -35,7 +37,9 @@ const Tooltip: React.FC<TooltipProps> = ({
   return (
     <div className={"relative " + containerClasses}>
       {children}
-      <span className={classes}>{message}</span>
+      <span id={id} className={classes} role="tooltip">
+        {message}
+      </span>
     </div>
   )
 }
