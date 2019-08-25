@@ -38,7 +38,7 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
           {navbarItems.map((item: string, index: number) => (
             <li key={item}>
               <ResponsiveNavbarLink
-                href={`#${item}`}
+                href={"#" + item.replace(" ", "-")}
                 active={activeItem === index}
               >
                 {item}

@@ -1,9 +1,9 @@
 import React from "react"
 
 const IconsList: React.FC = ({ children }) => (
-  <article className="flex flex-row flex-wrap justify-center">
+  <section className="flex flex-row flex-wrap justify-center">
     {children}
-  </article>
+  </section>
 )
 
 export default IconsList

@@ -11,10 +11,10 @@ const Project: React.FC<ProjectProps> = ({
   mockImage,
   description,
 }) => (
-  <article className="flex flex-col my-6 md:flex-row">
-    <section className="px-6 mb-6 md:w-1/2 md:pr-16 md:pl-4">
+  <section className="flex flex-col my-6 md:flex-row">
+    <article className="px-6 mb-6 md:w-1/2 md:pr-16 md:pl-4">
       {children}
-    </section>
+    </article>
     <Img
       fluid={mockImage}
       alt={description}
@@ -25,7 +25,7 @@ const Project: React.FC<ProjectProps> = ({
       loading="lazy"
       className="md:max-w-lg lg:mx-auto lg:max-w-xl md:w-3/5 md:my-auto"
     />
-  </article>
+  </section>
 )
 
 export default Project
