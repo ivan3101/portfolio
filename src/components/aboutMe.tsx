@@ -21,7 +21,7 @@ const AboutMe = () => {
     <section className="py-12 bg-white" ref={ref} id="about-me">
       <Container>
         <SectionHeader>About Me</SectionHeader>
-        <article className="flex mt-6 items-center flex-col-reverse lg:flex-row">
+        <section className="flex mt-6 items-center flex-col-reverse lg:flex-row">
           <p className="px-6 mt-6 md:px-16 lg:w-1/2">
             I&apos;m an European Web Developer based in Venezuela. I have a
             degree in Computer Engineering from the Jose Antonio Paez
@@ -32,7 +32,7 @@ const AboutMe = () => {
           <div className="lg:w-1/2">
             <ProfileImage />
           </div>
-        </article>
+        </section>
       </Container>
     </section>
   )
