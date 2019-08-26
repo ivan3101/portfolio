@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Ivan De Menezes | Portfolio",
     description: "Ivan De Menezes is a Fullstack Web Developer focused on ReactJS and NodeJS. Here you can see some of his previous works and also get in touch with him.",
-    siteUrl: "https://ivandemenezes.me",
+    siteUrl: "https://ivandemenezes.me/",
   },
   plugins: [
     `gatsby-plugin-typescript`,
