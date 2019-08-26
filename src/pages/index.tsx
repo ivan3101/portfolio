@@ -8,9 +8,11 @@ import Contact from "../components/contact"
 import Footer from "../components/footer"
 import NavbarActive from "../components/navbarActive"
 import MobileNavbar from "../components/mobileNavbar"
+import SEO from "../components/seo"
 
 const Index = () => (
   <React.Fragment>
+    <SEO />
     <NavbarActive>
       <MobileNavbar />
       <Hero />

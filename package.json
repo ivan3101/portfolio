@@ -22,12 +22,15 @@
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-postcss": "^2.1.5",
     "gatsby-plugin-purgecss": "^4.0.0",
+    "gatsby-plugin-react-helmet": "^3.1.5",
     "gatsby-plugin-sharp": "^2.2.17",
+    "gatsby-plugin-sitemap": "^2.2.9",
     "gatsby-plugin-typescript": "^2.1.5",
     "gatsby-source-filesystem": "^2.1.16",
     "gatsby-transformer-sharp": "^2.2.11",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
     "react-inlinesvg": "^1.1.6",
     "react-intersection-observer": "^8.24.1",
     "tailwindcss": "^1.1.2"
@@ -35,6 +38,7 @@
   "devDependencies": {
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/react-helmet": "^5.0.9",
     "@types/webpack-env": "^1.14.0",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
