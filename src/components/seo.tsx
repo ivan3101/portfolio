@@ -24,9 +24,7 @@ const SEO = () => {
     <Helmet defaultTitle={title}>
       <html lang="en" />
       <title>{title}</title>
-      <meta name="title" content={title} />
       <meta name="description" content={description} />
-      <meta name="image" content={siteUrl + "/" + image} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
