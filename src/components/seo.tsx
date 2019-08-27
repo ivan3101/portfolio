@@ -21,10 +21,11 @@ const SEO = () => {
   const { title, description, siteUrl, image } = data.site.siteMetadata
 
   return (
-    <Helmet defaultTitle={title}>
+    <Helmet>
       <html lang="en" />
       <title>{title}</title>
       <meta name="description" content={description} />
+      <link rel="canonical" href={siteUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
@@ -36,7 +37,6 @@ const SEO = () => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:creator" content="@ivandmnzs" />
       <meta name="twitter:image" content={siteUrl + "/" + image} />
-      <link rel="canonical" href={siteUrl} />
 
       <link rel="icon" href={siteUrl + "/favicon.ico"} />
       <link
