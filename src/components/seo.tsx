@@ -23,9 +23,7 @@ const SEO = () => {
   return (
     <Helmet defaultTitle={title}>
       <html lang="en" />
-      <title itemProp="name" lang="en">
-        {title}
-      </title>
+      <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="image" content={siteUrl + "/" + image} />
