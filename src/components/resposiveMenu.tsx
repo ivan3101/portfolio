@@ -6,6 +6,7 @@ import NavbarContext from "../context/navbarContext"
 import IconLink from "./iconLink"
 import githubIcon from "../../assets/icons/github.svg"
 import linkedinIcon from "../../assets/icons/linkedin.svg"
+import LanguageSwitcher from "./languageSwitcher"
 
 interface MobileNavbarProps {
   show: boolean
@@ -49,6 +50,9 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
               </ResponsiveNavbarLink>
             </li>
           ))}
+          <li>
+            <LanguageSwitcher />
+          </li>
         </ul>
         <ul className="flex flex-row absolute bottom-0 w-full justify-center">
           <li>

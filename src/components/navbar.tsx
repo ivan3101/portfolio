@@ -45,7 +45,7 @@ const Navbar = () => {
               link={"https://github.com/ivan3101/"}
             />
           </li>
-          <li>
+          <li className="self-center">
             <LanguageSwitcher />
           </li>
         </ul>
