@@ -1,7 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: "Ivan De Menezes | Portfolio",
-    description: "Ivan De Menezes is a Fullstack Web Developer focused on ReactJS and NodeJS. Here you can see some of his previous works and also get in touch with him.",
     siteUrl: "https://ivandemenezes.me",
     image: "https://ivandemenezes.me/preview.png"
   },
@@ -31,6 +29,14 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `translations`,
+        path: `${__dirname}/src/locales/`
+      }
+    },
+    `gatsby-transformer-json`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
   ]

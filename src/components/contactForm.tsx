@@ -7,6 +7,7 @@ import TextArea from "./textArea"
 import FormGroup from "./formGroup"
 import Tooltip, { TooltipBackground } from "./tooltip"
 import SuccessMessage from "./successMessage"
+import useTranslation from "../hooks/useTranslation"
 
 interface ContactFormProps {
   handleSubmit: React.ChangeEventHandler<HTMLFormElement>
@@ -31,6 +32,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
   onFocus,
   success,
 }) => {
+  const { contact } = useTranslation()
+
+  const { name, email, message } = contact
   return (
     <form
       className="my-10 mx-auto max-w-md text-right"
@@ -49,7 +53,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </label>
       </p>
       <FormGroup>
-        <FormLabel htmlFor="name">Your Name</FormLabel>
+        <FormLabel htmlFor="name">{name.label}</FormLabel>
 
         <Tooltip
           show={onFocus === "name" && !!errors.name}
@@ -62,7 +66,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             name="name"
             id="name"
             required
-            placeholder="John Smith"
+            placeholder={name.placeholder}
             onChange={handleChange}
             value={values.name}
             error={!!errors.name}
@@ -74,7 +78,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
       </FormGroup>
 
       <FormGroup>
-        <FormLabel htmlFor="email">Your Email</FormLabel>
+        <FormLabel htmlFor="email">{email.label}</FormLabel>
         <Tooltip
           show={onFocus === "email" && !!errors.email}
           block={true}
@@ -86,7 +90,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             name="email"
             id="email"
             type="email"
-            placeholder="john@example.com"
+            placeholder={email.placeholder}
             onChange={handleChange}
             onFocus={handleOnFocus}
             onBlur={handleOnBlur}
@@ -99,7 +103,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
       </FormGroup>
 
       <FormGroup>
-        <FormLabel htmlFor="message">Your Message</FormLabel>
+        <FormLabel htmlFor="message">{message.label}</FormLabel>
         <Tooltip
           show={onFocus === "message" && !!errors.message}
           block={true}
@@ -111,7 +115,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             aria-describedby="messageTooltip"
             id="message"
             name="message"
-            placeholder="Hello, how are you?"
+            placeholder={message.placeholder}
             onChange={handleChange}
             value={values.message}
             error={!!errors.message}
@@ -123,17 +127,12 @@ const ContactForm: React.FC<ContactFormProps> = ({
       </FormGroup>
 
       <SuccessMessage show={success}>
-        <p className="font-semibold mb-2">
-          Thank you! Your message was sent successfully
-        </p>
+        <p className="font-semibold mb-2">{contact.success.title}</p>
 
-        <p>
-          I appreciate that you liked my work and want to contact me. I&apos;ll
-          get back to you as soon as I read this message.
-        </p>
+        <p>{contact.success.message}</p>
       </SuccessMessage>
 
-      <SubmitButton disabled={disable}>Send Message</SubmitButton>
+      <SubmitButton disabled={disable}>{contact.submit}</SubmitButton>
     </form>
   )
 }

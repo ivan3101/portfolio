@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import ContactForm from "./contactForm"
 import useForm, { ValidationSchema } from "../hooks/useForm"
 import useFocus from "../hooks/useFocus"
+import useTranslation from "../hooks/useTranslation"
 
 export interface ContactData {
   [index: string]: string
@@ -29,6 +30,9 @@ const encode = (data: EncodeData) => {
 }
 
 const ContactFormContainer = () => {
+  const { contact } = useTranslation()
+  const { name, email, message } = contact
+
   const [success, setSuccess] = useState(false)
 
   const sendMessage = (
@@ -66,26 +70,26 @@ const ContactFormContainer = () => {
   const validationSchema: ValidationSchema = {
     name: {
       required: true,
-      requiredMessage: "You must enter your Name",
+      requiredMessage: name.error.required,
       validator: {
         regEx: /^[a-zA-Z\s]+$/,
-        error: "The Name field only can contain letters and spaces",
+        error: name.error.wrongInput,
       },
     },
     email: {
       required: true,
-      requiredMessage: "You must enter your email",
+      requiredMessage: email.error.required,
       validator: {
         regEx: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        error: "The Email entered is invalid",
+        error: email.error.wrongInput,
       },
     },
     message: {
       required: true,
-      requiredMessage: "You must enter your message",
+      requiredMessage: message.error.required,
       validator: {
         regEx: /^[a-zA-Z'",.@#!?\d\s]+$/,
-        error: "The message entered is invalid",
+        error: message.error.wrongInput,
       },
     },
   }

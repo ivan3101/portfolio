@@ -7,6 +7,7 @@ import ProjectTitle from "./projectTitle"
 import { useInView } from "react-intersection-observer"
 import { navbarPayload, NavbarTypes } from "../reducer/navbarReducer"
 import NavbarDispatchContext from "../context/navbarDispatchContext"
+import useTranslation from "../hooks/useTranslation"
 
 const query = graphql`
   query {
@@ -39,29 +40,26 @@ const Projects = () => {
     dispatch!(navbarPayload(NavbarTypes.PROJECTS))
   }
 
+  const { projects } = useTranslation()
+  const { ujap, rnet } = projects
   const [ujapMockup, rnetMockup] = useStaticQuery(query).allFile.edges
 
   return (
-    <section className="pt-12 bg-white" ref={ref} id="my-projects">
+    <section
+      className="pt-12 bg-white"
+      ref={ref}
+      id={projects.title.replace(" ", "-").toLowerCase()}
+    >
       <Container>
-        <SectionHeader>My Projects</SectionHeader>
+        <SectionHeader>{projects.title}</SectionHeader>
         <Project
           mockImage={rnetMockup.node.childImageSharp.fluid}
           description={"RNet"}
         >
-          <ProjectTitle>RNet Blog</ProjectTitle>
-          <p>
-            RNet is a blog about technology. The idea was to made a web page
-            while thinking about the problems that experiments people with
-            visual disability while navigating. I was responsible for the UI
-            design, UX and Front-end development and a API to use as Back-end.
-          </p>
+          <ProjectTitle>{rnet.title}</ProjectTitle>
+          <p>{rnet.description}</p>
           <br />
-          <p>
-            This project was built using Angular and SemanticUI for the
-            Front-end. The Back-end was built using NodeJS and Express, the
-            Database used was MongoDB.
-          </p>
+          <p>{rnet.technologies}</p>
         </Project>
       </Container>
 
@@ -72,19 +70,10 @@ const Projects = () => {
           mockImage={ujapMockup.node.childImageSharp.fluid}
           description={"Ujap Online"}
         >
-          <ProjectTitle>UJAP Online</ProjectTitle>
-          <p>
-            For Jose Antonio Paez University, I created a redisigned interface
-            for their online platform using new technologies and design
-            tendencies. I was responsible for UI design, UX and Front-end
-            development and a new API for the platform.
-          </p>
+          <ProjectTitle>{ujap.title}</ProjectTitle>
+          <p>{ujap.description}</p>
           <br />
-          <p>
-            This project was built using ReactJS, Sass and CoreUI for the
-            Front-end. The Back-end was built using NodeJS and Express, also the
-            Database used was MongoDB.
-          </p>
+          <p>{ujap.technologies}</p>
         </Project>
       </Container>
     </section>

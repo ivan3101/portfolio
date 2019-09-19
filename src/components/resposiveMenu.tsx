@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import ResponsiveMenuStyles from "./resposiveMenu.module.css"
 import ResponsiveNavbarLink from "./responsiveNavbarLink"
-import { navbarItems } from "./navbar"
+import useTranslation from "../hooks/useTranslation"
 import NavbarContext from "../context/navbarContext"
 import IconLink from "./iconLink"
 import githubIcon from "../../assets/icons/github.svg"
@@ -14,6 +14,10 @@ interface MobileNavbarProps {
 
 const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
   const activeItem = useContext(NavbarContext)
+
+  const { navbar } = useTranslation()
+
+  const navbarItems = navbar.links.split(",")
 
   let navClasses =
     "fixed h-full bg-white w-3/5 top-0 right-0 z-40 opacity-100 pt-12 "
@@ -51,14 +55,14 @@ const ResponsiveMenu: React.FC<MobileNavbarProps> = ({ show, onClick }) => {
             <IconLink
               link="https://www.linkedin.com/in/iv%C3%A1n-de-menezes-64ba17122/"
               src={linkedinIcon}
-              title="Ivan's Linkedin Profile"
+              title={navbar.linkedin}
             />
           </li>
           <li>
             <IconLink
               link="https://github.com/ivan3101/"
               src={githubIcon}
-              title="Ivan's Github profile"
+              title={navbar.github}
             />
           </li>
         </ul>

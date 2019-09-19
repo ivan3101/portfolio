@@ -6,6 +6,7 @@ import IconsList from "./iconsList"
 import { useInView } from "react-intersection-observer"
 import { navbarPayload, NavbarTypes } from "../reducer/navbarReducer"
 import NavbarDispatchContext from "../context/navbarDispatchContext"
+import useTranslation from "../hooks/useTranslation"
 
 const Skills = () => {
   const dispatch = useContext(NavbarDispatchContext)
@@ -18,16 +19,18 @@ const Skills = () => {
     dispatch!(navbarPayload(NavbarTypes.SKILLS))
   }
 
+  const { skills } = useTranslation()
+
   return (
-    <section className="py-12 bg-grey" ref={ref} id="my-skills">
+    <section
+      className="py-12 bg-grey"
+      ref={ref}
+      id={skills.title.replace(" ", "-").toLowerCase()}
+    >
       <Container>
-        <SectionHeader>My Skills</SectionHeader>
+        <SectionHeader>{skills.title}</SectionHeader>
         <p className="mx-auto px-6 mt-6 mb-5 md:text-center lg:px-48">
-          In my time as a Web Developer, I learned a variety of Computational
-          Languages, Libraries, Frameworks, Databases and Tools. I’m specialized
-          in JavaScript and use it for both, Front-end and Back-end development.
-          In Front-end I find myself mostly using ReactJS, and ExpressJS for the
-          Back-end.
+          {skills.description}
         </p>
         <IconsList>
           <SkillIconContainer />

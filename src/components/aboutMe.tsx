@@ -5,6 +5,7 @@ import SectionHeader from "./sectionHeader"
 import { useInView } from "react-intersection-observer"
 import { navbarPayload, NavbarTypes } from "../reducer/navbarReducer"
 import NavbarDispatchContext from "../context/navbarDispatchContext"
+import useTranslation from "../hooks/useTranslation"
 
 const AboutMe = () => {
   const dispatch = useContext(NavbarDispatchContext)
@@ -17,18 +18,18 @@ const AboutMe = () => {
     dispatch!(navbarPayload(NavbarTypes.ABOUT))
   }
 
+  const { about } = useTranslation()
+
   return (
-    <section className="py-12 bg-white" ref={ref} id="about-me">
+    <section
+      className="py-12 bg-white"
+      ref={ref}
+      id={about.title.replace(" ", "-").toLowerCase()}
+    >
       <Container>
-        <SectionHeader>About Me</SectionHeader>
+        <SectionHeader>{about.title}</SectionHeader>
         <section className="flex mt-6 items-center flex-col-reverse lg:flex-row">
-          <p className="px-6 mt-6 md:px-16 lg:w-1/2">
-            I&apos;m an European Web Developer based in Venezuela. I have a
-            degree in Computer Engineering from the Jose Antonio Paez
-            University. I love Linux and I&apos;ve been using it since I was 12
-            years old. I&apos;ve been programming for almost 6 years now,
-            specialized in JavaScript and NodeJS.
-          </p>
+          <p className="px-6 mt-6 md:px-16 lg:w-1/2">{about.description}</p>
           <div className="lg:w-1/2">
             <ProfileImage />
           </div>

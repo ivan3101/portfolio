@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer"
 import { navbarPayload, NavbarTypes } from "../reducer/navbarReducer"
 import NavbarDispatchContext from "../context/navbarDispatchContext"
 import ContactFormContainer from "./contactFormContainer"
+import useTranslation from "../hooks/useTranslation"
 
 const Contact = () => {
   const dispatch = useContext(NavbarDispatchContext)
@@ -17,14 +18,18 @@ const Contact = () => {
     dispatch!(navbarPayload(NavbarTypes.CONTACT))
   }
 
+  const { contact } = useTranslation()
+
   return (
-    <section className="py-10 bg-blue text-white" ref={ref} id="contact-me">
+    <section
+      className="py-10 bg-blue text-white"
+      ref={ref}
+      id={contact.title.replace(" ", "-").toLowerCase()}
+    >
       <Container>
-        <SectionHeader>Contact Me</SectionHeader>
+        <SectionHeader>{contact.title}</SectionHeader>
         <p className="px-3 mt-2 sm:text-center md:px-32 lg:px-56">
-          If you like my work and want to talk with me, then feel free to send
-          me a message using the contact form below or contact me through my
-          social networks.
+          {contact.description}
         </p>
         <ContactFormContainer />
       </Container>

@@ -5,16 +5,15 @@ import NavbarContext from "../context/navbarContext"
 import IconLink from "./iconLink"
 import githubIcon from "../../assets/icons/github.svg"
 import linkedinIcon from "../../assets/icons/linkedin.svg"
-
-export const navbarItems = [
-  "about me",
-  "my skills",
-  "my projects",
-  "contact me",
-]
+import useTranslation from "../hooks/useTranslation"
+import LanguageSwitcher from "../components/languageSwitcher"
 
 const Navbar = () => {
   const activeItem = useContext(NavbarContext)
+
+  const { navbar } = useTranslation()
+
+  const navbarItems = navbar.links.split(",")
 
   return (
     <nav className="h-50px top-0 sm:text-sm lg:text-base bg-white sticky shadow z-50 hidden sm:block">
@@ -33,7 +32,7 @@ const Navbar = () => {
           <li className="ml-auto">
             <IconLink
               src={linkedinIcon}
-              title="Ivan's Linkedin profile"
+              title={navbar.linkedin}
               link={
                 "https://www.linkedin.com/in/iv%C3%A1n-de-menezes-64ba17122/"
               }
@@ -42,9 +41,12 @@ const Navbar = () => {
           <li>
             <IconLink
               src={githubIcon}
-              title="Ivan's Github profile"
+              title={navbar.github}
               link={"https://github.com/ivan3101/"}
             />
+          </li>
+          <li>
+            <LanguageSwitcher />
           </li>
         </ul>
       </Container>

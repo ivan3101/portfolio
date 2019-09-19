@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "title": "Hola, soy Ivan De Menezes",
+    "subtitle": "Un",
+    "role": "Desarrollador Web Fullstack",
+    "and": "y un",
+    "linux": "entusiasta de Linux"
+  },
+  "navbar": {
+    "links": "sobre mi,mis habilidades,mis proyectos,contacto",
+    "linkedin": "Perfil de Linkedin de Ivan",
+    "github": "Perfil de Github de Ivan"
+  },
+  "about": {
+    "title": "Sobre Mi",
+    "description": "Soy un Desarrollador Web Europeo viviendo en Venezuela. Tengo un titulo universitarion en Ingenieria en Computacion de la Universidad Jose Antonio Paez. Soy un aficionado a Linux y lo he estado usando desde que tengo 12 años. Tengo casi 6 años de experiencia programando, especializandome en tecnologias basadas en JavaScript y NodeJS."
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "description": "En mi tiempo siendo un Desarrollador Web, he aprendido una gran variedad de Lenguajes de Programación, Librerias, Frameworks, Bases de Datos y Herramientas. Me especializo en JavaScript y lo uso tanto para desarrollo de Frontend como de Backend. En Frontend suelo utilizar ReactJS, y ExpressJS para Backend."
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "rnet": {
+      "title": "Blog RNet",
+      "description": "RNet es un blog sobre tecnologia. La idea era crear una pagina teniendo en cuenta las dificultades que afrontan las personas con discapacidades visuales mientras navegan por internet. Fui responsable de diseñar la Interfaz de Usuario, UX y el desarrollo del Frontend asi como del Backend.",
+      "technologies": "Este proyecto fue construido usando Anglar y SemanticUI para el Frontend. Para el Backend se uso NodeJS y ExpressJS, la Base de Datos usada fue Mongodb."
+    },
+    "ujap": {
+      "title": "UJAP En Linea",
+      "description": "Para la Universidad Jose Antonio Paéz, cree una interfaz rediseñada de su plataforma en linea usando tecnologias nuevas y tendias de diseño actuales. Fui responsable de diseñar la Interfaz de Usuario, UX y el desarrollo del Frontend asi como del Backend.",
+      "technologies": "Este proyecto fue construido usando ReactJS, Sass y CoreUI para el Frontend. Para el Backend se utilizo NodeJS y ExpressJS, la base de datos utilizada fue MongoDB."
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Si te gusta mi trabajo y quieres hablar conmigo, entonces enviame un mensaje usando la forma de contacto abajo o usa mis redes sociales.",
+    "name": {
+      "label": "Tu Nombre",
+      "placeholder": "John Smith",
+      "error": {
+        "required": "Debes ingresar tu Nombre.",
+        "wrongInput": "Solo puedes usar letras y espacios para escribir tu nombre."
+      }
+    },
+    "email": {
+      "label": "Tu Correo Electronico",
+      "placeholder": "john@ejemplo.com",
+      "error": {
+        "required": "Debes ingresar tu Correo Electronico.",
+        "wrongInput": "El Correo Electronico que haz ingresado es invalido. Por favor, verifica y vuelve a intentarlo."
+      }
+    },
+    "message": {
+      "label": "Tu Mensaje",
+      "placeholder": "Hola, ¿como estas?",
+      "error": {
+        "required": "Debes ingresar tu mensaje.",
+        "wrongInput": "El Mensaje que haz ingresado es invalido. Por favor, verifica y vuelve a intentarlo."
+      }
+    },
+    "success": {
+      "title": "Gracias! Tu mensaje ha sido enviado correctamente",
+      "message": "Aprecio que te haya gustado mi trabajo y quieras contactar conmigo. Escucharas de mi tan pronto como lea este mensaje."
+    },
+    "submit": "Enviar Mensaje"
+  },
+  "footer": {
+    "technologies": "Este portafolios fue construido usando ",
+    "and": " y "
+  }
+}

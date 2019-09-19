@@ -9,9 +9,17 @@ import Footer from "../components/footer"
 import NavbarActive from "../components/navbarActive"
 import MobileNavbar from "../components/mobileNavbar"
 import SEO from "../components/seo"
+import LocaleContext from "../context/localeContext"
+import { LocaleContext as ILocaleContext } from "../context/localeContext"
 
-const Index = () => (
-  <React.Fragment>
+interface IndexProps {
+  pageContext: {
+    locale: ILocaleContext
+  }
+}
+
+const Index: React.FC<IndexProps> = ({ pageContext }) => (
+  <LocaleContext.Provider value={pageContext.locale}>
     <SEO />
     <NavbarActive>
       <MobileNavbar />
@@ -25,7 +33,7 @@ const Index = () => (
       </main>
     </NavbarActive>
     <Footer />
-  </React.Fragment>
+  </LocaleContext.Provider>
 )
 
 export default Index

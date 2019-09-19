@@ -1,13 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import LocaleContext from "../context/localeContext"
 
 const query = graphql`
   query SEO {
     site {
       siteMetadata {
-        title
-        description
         siteUrl
         image
       }
@@ -18,23 +17,25 @@ const query = graphql`
 const SEO = () => {
   const data = useStaticQuery(query)
 
-  const { title, description, siteUrl, image } = data.site.siteMetadata
+  const { siteUrl, image } = data.site.siteMetadata
+
+  const locale = useContext(LocaleContext)
 
   return (
     <Helmet>
-      <html lang="en" />
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <html lang={locale.path} />
+      <title>{locale.title}</title>
+      <meta name="description" content={locale.description} />
       <link rel="canonical" href={siteUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={locale.title} />
+      <meta property="og:description" content={locale.description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:image" content={siteUrl + "/" + image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={siteUrl} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={locale.title} />
+      <meta name="twitter:description" content={locale.description} />
       <meta name="twitter:creator" content="@ivandmnzs" />
       <meta name="twitter:image" content={siteUrl + "/" + image} />
 

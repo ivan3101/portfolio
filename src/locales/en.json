@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "title": "Hi, I'm Ivan De Menezes",
+    "subtitle": "A",
+    "role": "Fullstack Web Developer",
+    "and": "and",
+    "linux": "Linux enthusiast"
+  },
+  "navbar": {
+    "links": "about me,my skills,my projects,contact me",
+    "linkedin": "Ivan's Linkedin profile",
+    "github": "Ivan's Github profile"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a European Web Developer based in Venezuela. I've a degree in Computer Engineering from the Jose Antonio Paez University. I love Linux and I've been using it since I was 12 years old. I've been programming for almost 6 years now, specializen in JavaScript and NodeJS."
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "In my time as a Web Developer, I learned a variety of Computational Languages, Libraries, Frameworks, Databases and tools. I'm specialized in JavaScript and use it fro both, Frontend and Backend development. In Frontend I find myself mostly using ReactJS, and ExpressJS for the Backend."
+  },
+  "projects": {
+    "title": "My Projects",
+    "rnet": {
+      "title": "RNet Blog",
+      "description": "RNet is a blog about technology. The idea was to make a web page while thinking about the problems that experiences people with visual disability while navigating the web. I was responsible for the UI design, UX and Frontend development and a API to use as Backend.",
+      "technologies": "This project was built using Angular and SemanticUI for the Frontend. The Backend was built using NodeJS and ExpressJS, the Database used was MongoDB."
+    },
+    "ujap": {
+      "title": "UJAP Online",
+      "description": "For the Jose Antonio Paez University, I created a redisigned interface for their online platform using new technologies and design tendencies. I was responsible for UI design, UX and Frontend development and a new API for the platform.",
+      "technologies": "This projects was built using ReactJS, Sass and CoreUI for the Frontend. The Backend was built using NodeJS and ExpressJS, also the database used was MongoDB."
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "description": "If you like my work and want to talk with me, then feel free to send me a message using the contact form below or contact me through my social networks.",
+    "name": {
+      "label": "Your Name",
+      "placeholder": "John Smith",
+      "error": {
+        "required": "You must enter your Name",
+        "wrongInput": "The Name field only can contain letters and spaces"
+      }
+    },
+    "email": {
+      "label": "Your Email",
+      "placeholder": "john@example.com",
+      "error": {
+        "required": "You must enter your Email",
+        "wrongInput": "The Email entered is invalid"
+      }
+    },
+    "message": {
+      "label": "Your Message",
+      "placeholder": "Hello, how are you?",
+      "error": {
+        "required": "You must enter your Message",
+        "wrongInput": "The Message entered is invalid"
+      }
+    },
+    "success": {
+      "title": "Thank you! Your message was sent successfully",
+      "message": "I appreciate that you liked my work and want to contact me. I'll get back to you as soon as I read this message."
+    },
+    "submit": "Send Message"
+  },
+  "footer": {
+    "technologies": "This portfolio was built using ",
+    "and": " and "
+  }
+}
